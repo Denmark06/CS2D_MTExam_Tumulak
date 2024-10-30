@@ -1,0 +1,7 @@
+let userProfile = { 
+  fullName: "Denmark Tumulak",
+  age: 19,
+  favoriteNumber: 6, 
+  favoriteColors: ["blue", "green", "red"]
+};
+console.log(userProfile); 
