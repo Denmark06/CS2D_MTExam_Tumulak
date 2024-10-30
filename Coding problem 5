@@ -1,0 +1,6 @@
+let colors = [];
+for (let i = 0; i < 3; i++) {
+  let color = prompt("Enter your favorite color:");
+  colors.push(color);
+  console.log("Current colors:", colors);
+}
