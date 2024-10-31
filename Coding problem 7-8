@@ -1,0 +1,67 @@
+let DSA = [];
+let PL = []; 
+let Networks = [];
+
+function enrollStudent(subject, studentName) {
+  subject.push(studentName);
+  console.log(`${studentName} enrolled in ${subject}`);
+}
+
+function unenrollStudent(subject, studentName) {
+  let index = subject.indexOf(studentName);
+  if (index !== -1) {
+    subject.splice(index, 1);
+    console.log(`${studentName} unenrolled from ${subject}`);
+  } else {
+    console.log(`${studentName} not found in ${subject}`);
+  }
+}
+
+function displayEnrolledStudents() {
+  console.log("Enrolled Students:");
+  console.log("DSA:", DSA);
+  console.log("PL:", PL);
+  console.log("Networks:", Networks);
+}
+
+function main() {
+  while (true) {
+    let subjectChoice = prompt("Select a subject: (A) DSA, (B) PL, (C) Networks");
+    let subject;
+    switch (subjectChoice) {
+      case "A":
+        subject = DSA;
+        break;
+      case "B":
+        subject = PL;
+        break;
+      case "C":
+        subject = Networks;
+        break;
+      default:
+        console.log("Invalid subject choice.");
+        continue;
+    }
+
+    let operationChoice = prompt("Select an operation: (A) Enroll, (B) Unenroll, (C) Select Another Subject, (D) Exit");
+    switch (operationChoice) {
+      case "A":
+        let studentName = prompt("Enter the name of the student to enroll:");
+        enrollStudent(subject, studentName);
+        break;
+      case "B":
+        let studentName = prompt("Enter the name of the student to unenroll:");
+        unenrollStudent(subject, studentName);
+        break;
+      case "C":
+        continue; 
+      case "D":
+        displayEnrolledStudents();
+        return; // Exit the program
+      default:
+        console.log("Invalid operation choice.");
+    }
+  }
+}
+
+main();
